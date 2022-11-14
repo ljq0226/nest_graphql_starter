@@ -19,16 +19,15 @@ import { Admin } from 'src/core/decorator/admin.decorator';
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly userService: UserService) { }
+  constructor(private readonly userService: UserService) {}
 
   @ApiOperation({ summary: '获取登录用户信息' })
   @ApiBearerAuth()
   @Auth()
   @Get('userinfo')
   getUserInfo(@Req() req) {
-    console.log(req.user)
-    return req.user
-
+    console.log(req.user);
+    return req.user;
   }
   @ApiOperation({ summary: '获取所有用户信息' })
   @ApiBearerAuth()
@@ -36,7 +35,6 @@ export class UserController {
   // @Auth()
   @Get('allUserinfo')
   getAllUsersInfo() {
-    return this.userService.getAllUsersInfo()
+    return this.userService.getAllUsersInfo();
   }
-
 }

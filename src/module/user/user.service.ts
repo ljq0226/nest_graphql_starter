@@ -5,7 +5,7 @@ import { PrismaService } from '../../prisma/prisma.service';
 
 @Injectable()
 export class UserService {
-  constructor(private prisma: PrismaService) { }
+  constructor(private prisma: PrismaService) {}
   create(createUserDto: CreateUserDto) {
     return 'This action adds a new user';
   }
@@ -31,12 +31,13 @@ export class UserService {
     //   }
     // }
     // )
-    const user = await this.prisma.user.findMany({ where: { username: username } })
-    console.log(user)
-    return user
+    const user = await this.prisma.user.findMany({
+      where: { username: username },
+    });
+    console.log(user);
+    return user;
   }
   async getAllUsersInfo() {
-    return await this.prisma.user.findMany()
+    return await this.prisma.user.findMany();
   }
-
 }

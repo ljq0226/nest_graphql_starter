@@ -7,10 +7,10 @@ export class AuthService {
   constructor(
     private readonly userService: UserService,
     private readonly prisma: PrismaService,
-    private readonly jwtService: JwtService
-  ) { }
+    private readonly jwtService: JwtService,
+  ) {}
   async validateUser(username: string, password: string): Promise<any> {
-    const user = await this.prisma.user.findFirst({ where: { username } })
+    const user = await this.prisma.user.findFirst({ where: { username } });
     if (user && user.password === password) {
       const { password, ...result } = user;
       return result;

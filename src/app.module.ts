@@ -10,8 +10,16 @@ import { TagModule } from './module/tag/tag.module';
 import { CategoryModule } from './module/category/category.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), PrismaModule, UserModule, AuthModule, PostModule, TagModule, CategoryModule],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    PrismaModule,
+    UserModule,
+    AuthModule,
+    PostModule,
+    TagModule,
+    CategoryModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
